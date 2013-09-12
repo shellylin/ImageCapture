@@ -6,7 +6,7 @@ var videoout = document.createElement('video');
 //var imageout = document.createElement('img');
 
 function getVideoTag() {
-  video.src = "huhu.webm";
+  video.src = "huhu2.webm";
   //videoout.mozSrcObject = video.mozCaptureStreamUntilEnded();
   mStream = video.mozCaptureStreamUntilEnded();
   video.play();
