@@ -2,16 +2,23 @@ var mImgCap;
 var mStream;
 var video = document.getElementById('videoElement');
 var resultImg = document.getElementById('resultImg');
-var videoout = document.createElement('video');
-//var imageout = document.createElement('img');
 
 function getVideoTag() {
-  video.src = "huhu2.webm";
-  //videoout.mozSrcObject = video.mozCaptureStreamUntilEnded();
+  video.src = "wont-give-up.webm";
   mStream = video.mozCaptureStreamUntilEnded();
   video.play();
-  //document.body.appendChild(videoout);
-  //videoout.play();
+}
+
+function getRealgUM() {
+  navigator.mozGetUserMedia(
+              { video:true },
+              function(s) {
+                video.mozSrcObject = s;
+                video.play();
+                mStream = s;
+                document.getElementById('msInput').value  = mStream;
+              },
+              function(e) {dump(e)});
 
 }
 
@@ -53,7 +60,7 @@ function takePic() {
 
 window.onload = function() {
   document.getElementById('playVideoTag').onclick = function() { getVideoTag(); };
+  document.getElementById('playRealUM').onclick = function() { getRealgUM(); };
   document.getElementById('playFakegUM').onclick = function() { getFakegUM(); };
   document.getElementById('takePhoto').onclick = function() { takePic(); };
-  resultImg.style.visibility = "hidden";
 };
