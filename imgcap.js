@@ -60,7 +60,7 @@ function takePic() {
 
 window.onload = function() {
   document.getElementById('playVideoTag').onclick = function() { getVideoTag(); };
-  document.getElementById('playRealUM').onclick = function() { getRealgUM(); };
+  document.getElementById('playRealgUM').onclick = function() { getRealgUM(); };
   document.getElementById('playFakegUM').onclick = function() { getFakegUM(); };
   document.getElementById('takePhoto').onclick = function() { takePic(); };
 };
